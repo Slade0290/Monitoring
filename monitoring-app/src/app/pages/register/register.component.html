@@ -1,18 +1,18 @@
-<form>
+<form #regform="ngForm" (ngSubmit)="register(regform)">
   <label for="email1">
     E-mail :
   </label>
-  <input type="email" name="email1" placeholder="E-mail">
+  <input type="email" id="email1" name="email1" placeholder="E-mail" ngModel>
   <br/>
   <label for="email2">
     Confirm e-mail :
   </label>
-  <input type="email" name="email2" placeholder="E-mail">
+  <input type="email" id="email2" name="email2" placeholder="E-mail" ngModel>
   <br/>
   <label for="password">
     Password :
   </label>
-  <input type="password" name="password" placeholder="Password">
+  <input type="password" id="password" name="password" placeholder="Password" ngModel>
   <br/>
-  <input type="button" name="" value="Register">
+  <input type="submit" value="Register">
 </form>

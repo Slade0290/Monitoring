@@ -1,4 +1,4 @@
-<form>
+<form #authform="ngForm" (ngSubmit)="register(authform)">
   <label for="login">
     Login :
   </label>
@@ -9,5 +9,5 @@
   </label>
   <input id="password" name="password" type="password" required placeholder="Password">
   <br/>
-  <input type="button" name="validate" id="btn_validate" value="Go !">
+  <input type="submit" name="validate" id="btn_validate" value="Go !">
 </form>
