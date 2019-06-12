@@ -1,0 +1,46 @@
+@squarecolor: #083F54;
+@squarehover: #2D8099;
+
+fieldset {
+  border: 1px white solid;
+  border-radius: 10px;
+  color: white;
+
+  .square {
+    position: relative;
+    width: 15%;
+    max-width: 200px;
+    min-width: 150px;
+    display: inline-flex;
+    margin-left: 5%;
+    border: @squarecolor 2px solid;
+    background-color: @squarecolor;
+    transition: 0.5s;
+    &:hover {
+      background-color: @squarehover;
+    }
+    .square-content {
+      margin: 8%;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      span {
+        position: absolute;
+        bottom: 20%;
+        right: 20%;
+      }
+    }
+  }
+  .square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  legend {
+    top: -5px;
+    //border: 1px white solid;
+    margin-left: 1em;
+    padding: 0.2em 0.8em
+  }
+}
