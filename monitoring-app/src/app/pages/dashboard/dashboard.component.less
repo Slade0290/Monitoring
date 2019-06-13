@@ -1,5 +1,31 @@
-@squarecolor: #083F54;
-@squarehover: #2D8099;
+@itemcolor: #083F54;
+@itemhover: #2D8099;
+
+.first-line {
+  display: flex;
+  background-color: @itemcolor;
+  padding: 0.5%;
+  .line-content {
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+.line {
+  display: flex;
+  border-left: 1.5px solid @itemcolor;
+  border-bottom: 1.5px solid @itemcolor;
+  transition: 0.5s;
+  .line-content {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0.3%;
+    border-right: 1.5px solid @itemcolor;
+  }
+  &:hover {
+    background-color: @itemhover;
+  }
+}
 
 fieldset {
   border: 1px white solid;
@@ -8,16 +34,16 @@ fieldset {
 
   .square {
     position: relative;
-    width: 15%;
+    width: 12%;
     max-width: 200px;
-    min-width: 150px;
+    min-width: 120px;
     display: inline-flex;
-    margin-left: 5%;
-    border: @squarecolor 2px solid;
-    background-color: @squarecolor;
+    margin-left: 1%;
+    border: @itemcolor 2px solid;
+    background-color: @itemcolor;
     transition: 0.5s;
     &:hover {
-      background-color: @squarehover;
+      background-color: @itemhover;
     }
     .square-content {
       margin: 8%;
