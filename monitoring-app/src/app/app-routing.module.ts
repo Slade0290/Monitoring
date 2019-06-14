@@ -5,6 +5,9 @@ import {AuthentificationComponent} from './pages/authentification/authentificati
 import {RegisterComponent} from './pages/register/register.component';
 import {DashboardComponent} from './pages/dashboard/dashboard.component';
 import {HomeComponent} from './pages/home/home.component';
+import {WebterminalComponent} from './pages/webterminal/webterminal.component';
+import {ProfilComponent} from './pages/profil/profil.component';
+import { SidebarComponent } from './partials/sidebar/sidebar.component';
 
 const routes: Routes = [
     {
@@ -18,6 +21,14 @@ const routes: Routes = [
     {
         path:'register',
         component:RegisterComponent,
+    },
+    {
+        path:'webterminal',
+        component:WebterminalComponent,
+    },
+    {
+        path:'profil',
+        component:ProfilComponent,
     },
     {
          path:'dashboard',

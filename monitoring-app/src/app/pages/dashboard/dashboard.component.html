@@ -1,105 +1,113 @@
-<fieldset class="health">
-  <legend>HEALTH</legend>
-  <div class="cpu square">
-    <p class="square-content">
-      CPU LOAD : <br/>%<br/>
-      <span>
-        DATA
+<div class="master-content">
+  <fieldset class="health">
+    <legend>HEALTH</legend>
+    <div class="cpu square">
+      <p class="square-content">
+        <span class="item">CPU LOAD : <br/>%<br/></span>
+        <span class="data">
+          DATA
+        </span>
+      </p>
+    </div>
+
+    <div class="hdd square">
+      <p class="square-content">
+        <span class="item">FREE DISK SPACE : <br/>%<br/></span>
+        <span class="data">
+          DATA
+        </span>
+      </p>
+    </div>
+
+    <div class="ram square">
+      <p class="square-content">
+        <span class="item">MEMORY AVAILABLE : <br/>Mbytes<br/></span>
+        <span class="data">
+          DATA
+        </span>
+      </p>
+    </div>
+
+    <div class="netdown square">
+      <p class="square-content">
+        <span class="item">NETWORK RECEIVE : <br/>Bytes/s<br/></span>
+        <span class="data">
+          DATA
+        </span>
+      </p>
+    </div>
+
+    <div class="netup square">
+      <p class="square-content">
+        <span class="item">NETWORK SEND : <br/>Bytes/s<br/></span>
+        <span class="data">
+          DATA
+        </span>
+      </p>
+    </div>
+
+  </fieldset>
+
+
+  <fieldset class="services">
+
+    <legend>SERVICES</legend>
+
+    <div class="first-line">
+      <span class="line-content">
+        DESCRIPTION
       </span>
-    </p>
-  </div>
-
-  <div class="hdd square">
-    <p class="square-content">
-      FREE DISK SPACE : <br/>%<br/>
-      <span>
-        DATA
+      <span class="line-content">
+        STATUS
       </span>
-    </p>
-  </div>
-
-  <div class="ram square">
-    <p class="square-content">
-      MEMORY AVAILABLE : <br/>Mbytes<br/>
-      <span>
-        DATA
+      <span class="line-content">
+        ACTION
       </span>
-    </p>
-  </div>
+    </div>
 
-  <div class="netdown square">
-    <p class="square-content">
-      NETWORK RECEIVE : <br/>Bytes/s<br/>
-      <span>
-        DATA
+    <!--Faire une boucle d'affichage
+    avec tous les services récupérés
+    avec le block suivant
+    -->
+    <div class="line">
+      <span class="line-content">
+        DESCRIPTION
       </span>
-    </p>
-  </div>
-
-  <div class="netup square">
-    <p class="square-content">
-      NETWORK SEND : <br/>Bytes/s<br/>
-      <span>
-        DATA
+      <span class="line-content">
+        STATUS
       </span>
-    </p>
-  </div>
+      <span class="line-content">
+        <input type="button" value="ACTION">
+      </span>
+    </div>
 
-</fieldset>
+    <div class="line">
+      <span class="line-content">
+        DESCRIPTION
+      </span>
+      <span class="line-content">
+        STATUS
+      </span>
+      <span class="line-content">
+        <input type="button" value="ACTION">
+      </span>
+    </div>
 
+    <div class="line">
+      <span class="line-content">
+        DESCRIPTION
+      </span>
+      <span class="line-content">
+        STATUS
+      </span>
+      <span class="line-content">
+        <input type="button" value="ACTION">
+      </span>
+    </div>
+  </fieldset>
 
-<fieldset class="services">
-  <legend>SERVICES</legend>
+  <fieldset class="chart">
+    <legend>CHARTS</legend>
+  </fieldset>
 
-  <div class="first-line">
-    <span class="line-content">
-      DESCRIPTION
-    </span>
-    <span class="line-content">
-      STATUS
-    </span>
-    <span class="line-content">
-      ACTION
-    </span>
-  </div>
-
-  <!--Faire une boucle d'affichage
-  avec tous les services récupérés
-  avec le block suivant
-  -->
-  <div class="line">
-    <span class="line-content">
-      DESCRIPTION
-    </span>
-    <span class="line-content">
-      STATUS
-    </span>
-    <span class="line-content">
-      <input type="button" value="ACTION">
-    </span>
-  </div>
-
-  <div class="line">
-    <span class="line-content">
-      DESCRIPTION
-    </span>
-    <span class="line-content">
-      STATUS
-    </span>
-    <span class="line-content">
-      <input type="button" value="ACTION">
-    </span>
-  </div>
-
-  <div class="line">
-    <span class="line-content">
-      DESCRIPTION
-    </span>
-    <span class="line-content">
-      STATUS
-    </span>
-    <span class="line-content">
-      <input type="button" value="ACTION">
-    </span>
-  </div>
-</fieldset>
+</div>

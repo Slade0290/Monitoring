@@ -1,72 +1,91 @@
 @itemcolor: #083F54;
 @itemhover: #2D8099;
 
-.first-line {
+.master-content {
   display: flex;
-  background-color: @itemcolor;
-  padding: 0.5%;
-  .line-content {
-    flex-grow: 1;
-    text-align: center;
-  }
-}
 
-.line {
-  display: flex;
-  border-left: 1.5px solid @itemcolor;
-  border-bottom: 1.5px solid @itemcolor;
-  transition: 0.5s;
-  .line-content {
-    flex-grow: 1;
-    text-align: center;
-    padding: 0.3%;
-    border-right: 1.5px solid @itemcolor;
-  }
-  &:hover {
-    background-color: @itemhover;
-  }
-}
-
-fieldset {
-  border: 1px white solid;
-  border-radius: 10px;
-  color: white;
-
-  .square {
-    position: relative;
-    width: 12%;
-    max-width: 200px;
-    min-width: 120px;
-    display: inline-flex;
-    margin-left: 1%;
-    border: @itemcolor 2px solid;
-    background-color: @itemcolor;
-    transition: 0.5s;
-    &:hover {
-      background-color: @itemhover;
+  fieldset {
+    border: 1px white solid;
+    border-radius: 10px;
+    color: white;
+    //min-width: 650px;
+    legend {
+      top: -5px;
+      //border: 1px white solid;
+      margin-left: 1em;
+      padding: 0.2em 0.8em
     }
-    .square-content {
-      margin: 8%;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      span {
-        position: absolute;
-        bottom: 20%;
-        right: 20%;
+  }
+  .chart {
+      //margin-top: ;
+
+  }
+
+  .services {
+    // margin-top: 1%;
+    // margin-left: 50%;
+    // min-height: 65vh;
+    .first-line {
+      display: flex;
+      background-color: @itemcolor;
+      padding: 0.5%;
+      .line-content {
+        flex-grow: 1;
+        text-align: center;
+      }
+    }
+
+    .line {
+      display: flex;
+      border-left: 1.5px solid @itemcolor;
+      border-bottom: 1.5px solid @itemcolor;
+      transition: 0.5s;
+      .line-content {
+        flex-grow: 1;
+        text-align: center;
+        padding: 0.3%;
+        border-right: 1.5px solid @itemcolor;
+      }
+      &:hover {
+        background-color: @itemhover;
       }
     }
   }
-  .square:after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-  }
-
-  legend {
-    top: -5px;
-    //border: 1px white solid;
-    margin-left: 1em;
-    padding: 0.2em 0.8em
+  .health {
+    // margin-top: -20%;
+    // margin-left: 38%;
+    .square {
+      position: relative;
+      width: 12%;
+      max-width: 200px;
+      min-width: 150px;
+      display: inline-flex;
+      margin-left: 1%;
+      border: @itemcolor 2px solid;
+      background-color: @itemcolor;
+      transition: 0.5s;
+      &:hover {
+        background-color: @itemhover;
+      }
+      .square-content {
+        margin: 8%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        .item {
+          //max-width: 70px;
+        }
+        .data {
+          position: absolute;
+          bottom: 20%;
+          right: 20%;
+        }
+      }
+    }
+    .square:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
   }
 }

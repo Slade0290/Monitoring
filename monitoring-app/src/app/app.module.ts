@@ -8,6 +8,9 @@ import { AuthentificationComponent } from './pages/authentification/authentifica
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HomeComponent } from './pages/home/home.component';
+import { WebterminalComponent } from './pages/webterminal/webterminal.component';
+import { ProfilComponent } from './pages/profil/profil.component';
+import { SidebarComponent } from './partials/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { HomeComponent } from './pages/home/home.component';
     AuthentificationComponent,
     DashboardComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    WebterminalComponent,
+    ProfilComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
