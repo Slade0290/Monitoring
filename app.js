@@ -1,14 +1,38 @@
-const http = require('http');
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const app = express();
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
+
+app.use(function(req, res, next) {
+  res.setHeader('Content-type', 'application/json');
+  res.setHeader('Accept', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Content-Type, Authorization, Access-Control-Allow-Origin');
   res.end('Hello World\n');
+  next();
 });
 
-server.listen(port, hostname, () => {
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(bodyParser.json());
+
+mongoose.connect('mongodb://B3C:monitoringb3c@ds231517.mlab.com:31517/web_monitoring', {
+  useNewUrlParser: true
+}).then(() => {
+  console.log("Connecté à la base de donnée");
+}).catch(err => {
+  console.log('Echéc de connexion à la base de donnée. Cause ...', err);
+});
+
+require('./routes/users.route.js')(app);
+
+app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
