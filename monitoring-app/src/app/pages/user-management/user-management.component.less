@@ -16,4 +16,27 @@ fieldset {
     margin-left: 1em;
     padding: 0.2em 0.8em
   }
+  .content {
+    .line {
+      display: flex;
+      transition: 0.5s;
+      span {
+        flex-grow: 1;
+        text-align: center;
+        width: 20%;
+        min-width: 15vh;
+      }
+    }
+    .user-firstline {
+      background-color: #083F54;
+    }
+    form {
+      display: inline;
+      .user-line {
+        &:hover {
+          background-color: #2D8099;
+        }
+      }
+    }
+  }
 }
