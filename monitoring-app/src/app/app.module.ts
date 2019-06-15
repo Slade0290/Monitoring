@@ -12,6 +12,7 @@ import { WebterminalComponent } from './pages/webterminal/webterminal.component'
 import { ProfilComponent } from './pages/profil/profil.component';
 import { SidebarComponent } from './partials/sidebar/sidebar.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { UserManagementComponent } from './pages/user-management/user-management.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     WebterminalComponent,
     ProfilComponent,
     SidebarComponent,
-    AboutusComponent
+    AboutusComponent,
+    UserManagementComponent
   ],
   imports: [
     BrowserModule,

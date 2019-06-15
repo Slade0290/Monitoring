@@ -1,115 +1,127 @@
-<div class="master-content">
-  <fieldset class="health first-content">
-    <legend>HEALTH</legend>
-    <div class="cpu square">
-      <p class="square-content">
-        <span class="item">CPU LOAD : <br/>%<br/></span>
-        <span class="data">
-          DATA
+<div class="master-content box">
+<div class="chart">
+
+  <h4>CHARTS</h4>
+
+    </div>
+    <div class="second-content">
+
+
+
+    <div class="health">
+
+      <h4>HEALTH</h4>
+
+      <div class="cpu square">
+        <p class="square-content">
+          <span class="item">CPU LOAD<br/>%<br/></span>
+          <span class="data">
+            DATA
+          </span>
+        </p>
+      </div>
+
+      <div class="hdd square">
+        <p class="square-content">
+          <span class="item">FREE DISK SPACE<br/>%<br/></span>
+          <span class="data">
+            DATA
+          </span>
+        </p>
+      </div>
+
+      <div class="ram square">
+        <p class="square-content">
+          <span class="item">MEMORY AVAILABLE<br/>Mbytes<br/></span>
+          <span class="data">
+            DATA
+          </span>
+        </p>
+      </div>
+
+      <div class="netdown square">
+        <p class="square-content">
+          <span class="item">NETWORK RECEIVE<br/>Bytes/s<br/></span>
+          <span class="data">
+            DATA
+          </span>
+        </p>
+      </div>
+
+      <div class="netup square">
+        <p class="square-content">
+          <span class="item">NETWORK SEND<br/>Bytes/s<br/></span>
+          <span class="data">
+            DATA
+          </span>
+        </p>
+      </div>
+
+
+
+    </div>
+<div class="services">
+
+<h4>SERVICES</h4>
+
+
+
+      <div class="first-line">
+        <span class="line-content">
+          DESCRIPTION
         </span>
-      </p>
-    </div>
-    <!--une grosse frame qui réuni 2 petites frames
-    les charts en haut et le reste en bas
-    -->
-    <div class="hdd square">
-      <p class="square-content">
-        <span class="item">FREE DISK SPACE : <br/>%<br/></span>
-        <span class="data">
-          DATA
+        <span class="line-content">
+          STATUS
         </span>
-      </p>
-    </div>
-
-    <div class="ram square">
-      <p class="square-content">
-        <span class="item">MEMORY AVAILABLE : <br/>Mbytes<br/></span>
-        <span class="data">
-          DATA
+        <span class="line-content">
+          ACTION
         </span>
-      </p>
-    </div>
+      </div>
 
-    <div class="netdown square">
-      <p class="square-content">
-        <span class="item">NETWORK RECEIVE : <br/>Bytes/s<br/></span>
-        <span class="data">
-          DATA
+      <!--Faire une boucle d'affichage
+      avec tous les services récupérés
+      avec le block suivant
+      -->
+      <div class="line">
+        <span class="line-content">
+          DESCRIPTION
         </span>
-      </p>
-    </div>
-
-    <div class="netup square">
-      <p class="square-content">
-        <span class="item">NETWORK SEND : <br/>Bytes/s<br/></span>
-        <span class="data">
-          DATA
+        <span class="line-content">
+          STATUS
         </span>
-      </p>
-    </div>
+        <span class="line-content">
+          <input type="button" value="ACTION">
+        </span>
+      </div>
 
-  </fieldset>
+      <div class="line">
+        <span class="line-content">
+          DESCRIPTION
+        </span>
+        <span class="line-content">
+          STATUS
+        </span>
+        <span class="line-content">
+          <input type="button" value="ACTION">
+        </span>
+      </div>
+
+      <div class="line">
+        <span class="line-content">
+          DESCRIPTION
+        </span>
+        <span class="line-content">
+          STATUS
+        </span>
+        <span class="line-content">
+          <input type="button" value="ACTION">
+        </span>
+      </div>
 
 
-  <fieldset class="services">
+  </div>
 
-    <legend>SERVICES</legend>
 
-    <div class="first-line">
-      <span class="line-content">
-        DESCRIPTION
-      </span>
-      <span class="line-content">
-        STATUS
-      </span>
-      <span class="line-content">
-        ACTION
-      </span>
-    </div>
-
-    <!--Faire une boucle d'affichage
-    avec tous les services récupérés
-    avec le block suivant
-    -->
-    <div class="line">
-      <span class="line-content">
-        DESCRIPTION
-      </span>
-      <span class="line-content">
-        STATUS
-      </span>
-      <span class="line-content">
-        <input type="button" value="ACTION">
-      </span>
-    </div>
-
-    <div class="line">
-      <span class="line-content">
-        DESCRIPTION
-      </span>
-      <span class="line-content">
-        STATUS
-      </span>
-      <span class="line-content">
-        <input type="button" value="ACTION">
-      </span>
-    </div>
-
-    <div class="line">
-      <span class="line-content">
-        DESCRIPTION
-      </span>
-      <span class="line-content">
-        STATUS
-      </span>
-      <span class="line-content">
-        <input type="button" value="ACTION">
-      </span>
-    </div>
-  </fieldset>
-
-  <fieldset class="chart">
-    <legend>CHARTS</legend>
-  </fieldset>
+</div>
 
 </div>
