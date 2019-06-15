@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { WebterminalComponent } from './pages/webterminal/webterminal.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { SidebarComponent } from './partials/sidebar/sidebar.component';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SidebarComponent } from './partials/sidebar/sidebar.component';
     HomeComponent,
     WebterminalComponent,
     ProfilComponent,
-    SidebarComponent
+    SidebarComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,

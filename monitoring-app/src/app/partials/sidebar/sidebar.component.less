@@ -1,13 +1,21 @@
+@sidebar: #21201E;
+@sidebarhover: #434543;
+@sidebarlinkhover: #85C630;
+
 .sidebar {
   height: 100vh;
   top: 0;
+  left: 0;
   width: 200px;
-  background-color: #21201E;
+  background-color: @sidebar;
   position: absolute;
   .sidebar-icon {
     p {
-      padding-left: 38% !important;
+      padding-left: 36% !important;
       color: white;
+      .fas {
+        font-size: 2.5em;
+      }
     }
   }
   .sidebar-title {
@@ -23,8 +31,8 @@
         color: white;
         transition: 0.5s;
         &:hover {
-          color: #85C630;
-          padding-left: 10px; 
+          color: @sidebarlinkhover;
+          padding-left: 10px;
         }
       }
     }
@@ -32,7 +40,7 @@
   .sidebar-item-link {
     transition: 0.5s;
     &:hover {
-      background-color: #434543;
+      background-color: @sidebarhover;
     }
   }
 }

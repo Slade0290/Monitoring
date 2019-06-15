@@ -8,6 +8,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {WebterminalComponent} from './pages/webterminal/webterminal.component';
 import {ProfilComponent} from './pages/profil/profil.component';
 import { SidebarComponent } from './partials/sidebar/sidebar.component';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
 
 const routes: Routes = [
     {
@@ -29,6 +30,10 @@ const routes: Routes = [
     {
         path:'profil',
         component:ProfilComponent,
+    },
+    {
+        path:'aboutus',
+        component:AboutusComponent,
     },
     {
          path:'dashboard',

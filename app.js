@@ -28,7 +28,7 @@ mongoose.connect('mongodb://B3C:monitoringb3c@ds231517.mlab.com:31517/web_monito
 }).then(() => {
   console.log("Connecté à la base de donnée");
 }).catch(err => {
-  console.log('Echéc de connexion à la base de donnée. Cause ...', err);
+  console.log('Echec de connexion à la base de données. Cause ...', err);
 });
 
 require('./routes/users.route.js')(app);
