@@ -4,8 +4,90 @@
   <meta charset="utf-8">
   <title>Monitoring server</title>
   <base href="/">
-  <script src="https://kit.fontawesome.com/17e676be8b.js"></script>
 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        // Define the chart to be drawn.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Element');
+        data.addColumn('number', 'Percentage');
+        data.addRows([
+          ['Nitrogen', 0.78],
+          ['Oxygen', 0.21],
+          ['Other', 0.01]
+        ]);
+        // Set chart options
+           var options = {'title':'How Much Pizza I Ate Last Night',
+                          'titleTextStyle': {
+                             'color': '#FFFFFF'
+                          },
+                          'width':400,
+                          'height':200,
+                          'backgroundColor':'#21201E',
+                          'position': 'top',
+                          'vAxis': {
+                            'textStyle': {
+                                'color': '#FFFFFF'
+                            }
+                          },
+                          'hAxis': {
+                            'textStyle': {
+                              'color': '#FFFFFF'
+                            }
+                          },
+                          'legend': {
+                            'position': 'bottom',
+                            'textStyle': {
+                              'color': '#FFFFFF'
+                            }
+                          }
+                          };
+          var options1 = {'title':'How Much Pizza I Ate Last Night',
+                         'pieHole': 0.45,
+                         'titleTextStyle': {
+                            'color': '#FFFFFF'
+                         },
+                         'width':200,
+                         'height':200,
+                         'backgroundColor':'#21201E',
+                         'position': 'top',
+                         'vAxis': {
+                           'textStyle': {
+                               'color': '#FFFFFF'
+                           }
+                         },
+                         'hAxis': {
+                           'textStyle': {
+                             'color': '#FFFFFF'
+                           }
+                         },
+                         'legend': {
+                           'position': 'bottom',
+                           'textStyle': {
+                             'color': '#FFFFFF'
+                           }
+                         }
+                         };
+        // Instantiate and draw the chart.
+        var chart = new google.visualization.LineChart(document.getElementById('myChart'));
+        chart.draw(data, options);
+
+        var chart2 = new google.visualization.PieChart(document.getElementById('donut-chart1'));
+        chart2.draw(data, options1);
+
+        var chart3 = new google.visualization.PieChart(document.getElementById('donut-chart2'));
+        chart3.draw(data, options1);
+
+        var chart4 = new google.visualization.PieChart(document.getElementById('donut-chart3'));
+        chart4.draw(data, options1);
+      }
+
+  </script>
+  <script src="https://kit.fontawesome.com/17e676be8b.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">

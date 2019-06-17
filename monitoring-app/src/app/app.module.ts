@@ -14,7 +14,6 @@ import { SidebarComponent } from './partials/sidebar/sidebar.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
