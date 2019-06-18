@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
 })
 export class UsersService {
 
-  apiUrl = "http://localhost:3000/register";
-
   datatopost;
 
   httpOptions = {
@@ -47,7 +45,7 @@ export class UsersService {
     this.datatopost = JSON.stringify(payload);
 
     // requête http en post qui renvoie resp ou err
-    return this.http.post(this.apiUrl, this.datatopost, this.httpOptions).subscribe(
+    return this.http.post("http://localhost:3000/register", this.datatopost, this.httpOptions).subscribe(
       res => {
         console.log(res);
       },
