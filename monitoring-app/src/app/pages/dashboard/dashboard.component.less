@@ -1,9 +1,7 @@
 @itemcolor: #083F54;
 @itemhover: #2D8099;
 
-.master-content {
-  display: flex;
-  flex-wrap: wrap;
+fieldset {
   margin-right: 70px;
   margin-top: 45px;
   margin-bottom: 30px;
@@ -16,87 +14,73 @@
   background-color: #21201E;
   padding: 10px;
   min-width: 140vh;
-  h4 {
-
+  overflow: auto;
+  legend {
+    top: -5px;
+    margin-left: 1em;
+    padding: 0.2em 0.8em
   }
-
-  .chart {
-      min-width: 137vh;
-      border-bottom: 1px solid white;
-      min-height: 35vh;
-  }
-    .second-content {
+  .master-content {
+    display: flex;
+    flex-wrap: wrap;
+    .chart {
         display: flex;
-        min-width: 140vh;
-
-        .services {
-          padding: 15px;
-          max-width: 46%;
+        .chart-item {
           margin: 10px;
-          width: 100%;
-          max-height: 40vh;
-          overflow: auto;
-          .first-line {
-            display: flex;
-            background-color: @itemcolor;
-            padding: 0.5%;
-            .line-content {
-              flex-grow: 1;
-              text-align: center;
-            }
-          }
-          .line {
-            display: flex;
-            transition: 0.5s;
-            .line-content {
-              flex-grow: 1;
-              text-align: center;
-              padding: 0.3%;
-            }
-            &:hover {
-              background-color: @itemhover;
-            }
-          }
         }
-        .health {
-          border-right: 1px solid white;
-          padding: 15px;
-          max-width: 46%;
-          margin: 10px;
-          max-height: 45vh;
-          .square {
-            position: relative;
-            width: 12%;
-            max-width: 200px;
-            min-width: 120px;
-            display: inline-flex;
-            margin-left: 1%;
-            border: @itemcolor 2px solid;
-            background-color: @itemcolor;
-            transition: 0.5s;
-            &:hover {
-              background-color: @itemhover;
-            }
-            .square-content {
-              margin: 8%;
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              .item {
-
-              }
-              .data {
-                position: absolute;
-                bottom: 20%;
-                right: 20%;
-              }
-            }
-          }
-          .square:after {
-            content: "";
-            display: block;
-            padding-bottom: 100%;
-          }
+    }
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: right;
+      .box {
+        margin: 10px;
+        background-color: @itemcolor;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        border-radius: 20px 0 20px 0;
+        transition: 0.5s;
+        &:hover {
+          background-color: @itemhover;
         }
+        .item {
+          font-size: 0.8em;
+        }
+      }
+    }
+    .services {
+      float: right;
+      padding: 15px;
+      max-width: 46%;
+      margin: 10px;
+      width: 100%;
+      max-height: 40vh;
+      overflow: auto;
+      .first-line {
+        display: flex;
+        background-color: @itemcolor;
+        padding: 0.5%;
+        .line-content {
+          flex-grow: 1;
+          text-align: center;
+        }
+      }
+      .line {
+        display: flex;
+        transition: 0.5s;
+        .line-content {
+          flex-grow: 1;
+          text-align: center;
+          padding: 0.3%;
+        }
+        &:hover {
+          background-color: @itemhover;
+        }
+      }
+    }
   }
 }

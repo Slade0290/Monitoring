@@ -1,71 +1,102 @@
-<div class="master-content box">
-<div class="chart">
+<fieldset>
+  <legend>DASHBOARD</legend>
+<div class="master-content">
+  <div class="chart">
+    <div id="myChart" class="chart-item"></div>
+    <div id="donut-chart1" class="chart-item"></div>
+    <div id="donut-chart2" class="chart-item"></div>
+    <div id="donut-chart3" class="chart-item"></div>
+  </div>
 
-  <h4>CHARTS</h4>
-
+  <div class="info">
+    <div class="box-system box">
+      <p class="section-title">
+        SYSTEM
+      </p>
+      <span class="item">
+        HOSTNAME : DATA
+      </span>
+      <br/>
+      <span class="item">
+        OS VERSION : DATA
+      </span>
+      <br/>
+      <span class="item">
+        LAST UPDATE : DATA
+      </span>
+      <br/>
     </div>
-    <div class="second-content">
 
-
-
-    <div class="health">
-
-      <h4>HEALTH</h4>
-
-      <div class="cpu square">
-        <p class="square-content">
-          <span class="item">CPU LOAD<br/>%<br/></span>
-          <span class="data">
-            DATA
-          </span>
-        </p>
-      </div>
-
-      <div class="hdd square">
-        <p class="square-content">
-          <span class="item">FREE DISK SPACE<br/>%<br/></span>
-          <span class="data">
-            DATA
-          </span>
-        </p>
-      </div>
-
-      <div class="ram square">
-        <p class="square-content">
-          <span class="item">MEMORY AVAILABLE<br/>Mbytes<br/></span>
-          <span class="data">
-            DATA
-          </span>
-        </p>
-      </div>
-
-      <div class="netdown square">
-        <p class="square-content">
-          <span class="item">NETWORK RECEIVE<br/>Bytes/s<br/></span>
-          <span class="data">
-            DATA
-          </span>
-        </p>
-      </div>
-
-      <div class="netup square">
-        <p class="square-content">
-          <span class="item">NETWORK SEND<br/>Bytes/s<br/></span>
-          <span class="data">
-            DATA
-          </span>
-        </p>
-      </div>
-
-
-
+    <div class="box-cpu box">
+      <p class="section-title">
+        CPU
+      </p>
+      <span class="item">
+        CPU NAME : DATA
+      </span>
+      <br/>
+      <span class="item">
+        CORES : DATA
+      </span>
+      <br/>
+      <span class="item">
+        TEMP : DATA
+      </span>
+      <br/>
+      <span class="item">
+        CPU LOAD : DATA
+      </span>
+      <br/>
     </div>
-<div class="services">
 
-<h4>SERVICES</h4>
+    <div class="box-disk box">
+      <p class="section-title">
+        DISK
+      </p>
+      <span class="item">
+        DISK NAME : DATA
+      </span>
+      <br/>
+      <span class="item">
+        FREESPACE : DATA
+      </span>
+      <br/>
+      <span class="item">
+        TOTAL SIZE : DATA
+      </span>
+      <br/>
+    </div>
 
+    <div class="box-ram box">
+      <p class="section-title">
+        RAM
+      </p>
+      <span class="item">
+        TOTAL SIZE : DATA
+      </span>
+      <br/>
+      <span class="item">
+        RAM LOAD : DATA
+      </span>
+      <br/>
+    </div>
 
+    <div class="box-network box">
+      <p class="section-title">
+        NETWORK
+      </p>
+      <span class="item">
+        RECEIVE : DATA
+      </span>
+      <br/>
+      <span class="item">
+        SEND : DATA
+      </span>
+      <br/>
+    </div>
+  </div>
 
+  <div class="services">
       <div class="first-line">
         <span class="line-content">
           DESCRIPTION
@@ -105,23 +136,6 @@
           <input type="button" value="ACTION">
         </span>
       </div>
-
-      <div class="line">
-        <span class="line-content">
-          DESCRIPTION
-        </span>
-        <span class="line-content">
-          STATUS
-        </span>
-        <span class="line-content">
-          <input type="button" value="ACTION">
-        </span>
-      </div>
-
-
-  </div>
-
-
+    </div>
 </div>
-
-</div>
+</fieldset>

@@ -12,16 +12,41 @@ fieldset {
   background-color: #21201E;
   max-height: 80vh;
   min-height: 60vh;
+  overflow: auto;
   legend {
     top: -5px;
     margin-left: 1em;
     padding: 0.2em 0.8em
   }
   form {
-    .textfield {
+    background-color: black;
+    .term-result {
       min-width: 100%;
       background-color: black;
+      display: inline;
       color: white;
+      font-size: 0.8em;
+    }
+    .term-line {
+      min-width: 100%;
+      color: white;
+      display: inline;
+      p {
+        display: inline;
+        font-size: 0.8em;
+      }
+      .textfield {
+        background-color: black;
+        border: none;
+        display: inline;
+        color: white;
+        min-width: 85%;
+        overflow: auto;
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
     }
     .button-hidden {
       display: none;
