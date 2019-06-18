@@ -5,7 +5,7 @@ module.exports = (app) => {
     app.post('/register', user.create);
 
     // Retrieve all users
-    app.get('/users', user.findAll);
+    app.get('/user-management', user.findAll);
 
     // Retrieve a single user with noteId
     app.get('/users/:id', user.findOne);
@@ -14,5 +14,5 @@ module.exports = (app) => {
     app.put('/users/:id', user.update);
 
     // Delete a user with userid
-    app.delete('/users/:id', user.delete);
+    app.delete('/user-management/:id', user.delete);
 }

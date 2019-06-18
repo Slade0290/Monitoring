@@ -22,32 +22,39 @@
         <span class="line-content">
           SUDO
         </span>
+
+        <span class="line-content">
+          REMOVE
+        </span>
+
       </div>
 
-      <form class="" action="index.html" method="post">
-        <div class="user-line line">
+        <div class="user-line line" *ngFor="let user of users">
           <span class="line-content">
-            FIRSTNAME
+            {{user.firstname}}
           </span>
 
           <span class="line-content">
-            NAME
+            {{user.lastname}}
           </span>
 
           <span class="line-content">
-            LOGIN
+            {{user.email}}
           </span>
 
           <span class="line-content">
-            <input type="button" name="" value="ON">
-            <input type="button" name="" value="OFF">
+            <button type="button" name="" value="ON">ON</button>
+            <button type="button" name="" value="OFF">OFF</button>
           </span>
 
           <span class="line-content">
-            <input type="button" name="" value="ON">
-            <input type="button" name="" value="OFF">
+            <button type="button" name="" value="ON">ON</button>
+            <button type="button" name="" value="OFF">OFF</button>
+          </span>
+
+          <span class="line-content">
+            <button type="button" name="delete" (click)="deleteUser(user.id)" class="fas fa-trash"></button>
           </span>
         </div>
-    </form>
     </div>
 </fieldset>

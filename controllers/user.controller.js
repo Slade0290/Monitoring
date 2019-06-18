@@ -13,7 +13,9 @@ exports.create = (req, res) => {
       lastname: req.body.lastname,
       firstname: req.body.firstname,
       email: req.body.email,
-      password:req.body.password
+      password:req.body.password,
+      admin:req.body.admin,
+      surdo:req.body.sudo
 
     });
     // Save user in the database
@@ -77,7 +79,9 @@ exports.update = (req, res) => {
       nom: req.body.nom,
       prenom: req.body.prenom,
       email: req.body.email,
-      password:req.body.password
+      password:req.body.password,
+      admin:req.body.admin,
+      surdo:req.body.sudo
     }, {new: true})
     .then(user => {
         if(!user) {

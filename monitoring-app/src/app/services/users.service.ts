@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class UsersService {
 
-  apiUrl = "http://localhost:3000/";
+  apiUrl = "http://localhost:3000/user-management";
 
   datatopost;
 

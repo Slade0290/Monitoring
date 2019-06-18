@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UsersService} from '../../services/users.service';
+
 
 @Component({
   selector: 'app-user-management',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor() { }
+  users;
+
+  constructor(private usersService:UsersService) {
+    this.usersService.getUsers().subscribe(users=>{
+      this.users=users;
+      console.log(users);
+    })
+   }
 
   ngOnInit() {
+
   }
 
+  deleteUser(id){
+    this.usersService
+    .delete(id).subscribe(resp=>{
+      console.log(resp);
+    });
+    location.reload();
+  }
 }

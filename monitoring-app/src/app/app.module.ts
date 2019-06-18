@@ -18,7 +18,6 @@ import { UserManagementComponent } from './pages/user-management/user-management
 
 import {UsersService} from './services/users.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
