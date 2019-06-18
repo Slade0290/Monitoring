@@ -3,7 +3,7 @@ const User = require('../models/user.model.js');
 // Create and Save a new user
 exports.create = (req, res) => {
     // Validate request
-    if(!req.body.email && !req.body.email) {
+    if(!req.body.email || !req.body.email) {
         return res.status(400).send({
             message: "user content can not be empty"
         });
@@ -13,10 +13,7 @@ exports.create = (req, res) => {
       lastname: req.body.lastname,
       firstname: req.body.firstname,
       email: req.body.email,
-      password:req.body.password,
-      admin:req.body.admin,
-      surdo:req.body.sudo
-
+      password:req.body.password
     });
     // Save user in the database
     user.save()
@@ -37,7 +34,7 @@ exports.findAll = (req, res) => {
         res.send(users);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "probléme a la recuperation des Users"
+            message: err.message || "problème à la récupération des Users"
         });
     });
 };
@@ -79,9 +76,7 @@ exports.update = (req, res) => {
       nom: req.body.nom,
       prenom: req.body.prenom,
       email: req.body.email,
-      password:req.body.password,
-      admin:req.body.admin,
-      surdo:req.body.sudo
+      password:req.body.password
     }, {new: true})
     .then(user => {
         if(!user) {

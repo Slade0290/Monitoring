@@ -29,7 +29,7 @@ export class UsersService {
 
   // get one user by Id
   getUser(id) {
-    return this.http.get(this.apiUrl + id);
+    return this.http.get("http://localhost:3000/profil/" + id);
   }
 
   // create a user
@@ -66,7 +66,7 @@ export class UsersService {
       "lastname": lastname,
       "firstname": firstname,
       "email": email,
-      "password": password,
+      "password": password
     }
     // conversion en JSON
     this.datatopost = JSON.stringify(payload);
