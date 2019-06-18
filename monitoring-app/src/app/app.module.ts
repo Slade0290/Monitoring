@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+
 
 import { AuthentificationComponent } from './pages/authentification/authentification.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -13,6 +15,8 @@ import { ProfilComponent } from './pages/profil/profil.component';
 import { SidebarComponent } from './partials/sidebar/sidebar.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
+
+import {UsersService} from './services/users.service';
 
 
 @NgModule({
@@ -30,9 +34,12 @@ import { UserManagementComponent } from './pages/user-management/user-management
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UsersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

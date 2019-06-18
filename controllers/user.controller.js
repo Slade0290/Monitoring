@@ -3,15 +3,15 @@ const User = require('../models/user.model.js');
 // Create and Save a new user
 exports.create = (req, res) => {
     // Validate request
-    if(!req.body.nom) {
+    if(!req.body.lastname) {
         return res.status(400).send({
             message: "user content can not be empty"
         });
     }
     // Create a user
     const user = new User({
-      nom: req.body.nom,
-      prenom: req.body.prenom,
+      lastname: req.body.lastname,
+      firstname: req.body.firstname,
       email: req.body.email,
       password:req.body.password,
 

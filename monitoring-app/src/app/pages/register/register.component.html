@@ -1,18 +1,23 @@
 <form>
-  <label for="email1">
+  <label for="LastName">
+    LastName :
+  </label>
+  <input type="text" id="lastname" name="lastname" placeholder="lastname" [value]="formCreate.lastname" (change)="formCreate.lastname = $event.target.value" ngModel>
+  <br/>
+  <label for="Firstname">
+    Firstname :
+  </label>
+  <input type="text" id="firstname" name="firstname" placeholder="firstname" [value]="formCreate.firstname" (change)="formCreate.firstname = $event.target.value" ngModel>
+  <br/>
+  <label for="email">
     E-mail :
   </label>
-  <input type="email" id="email1" name="email1" placeholder="E-mail" ngModel>
-  <br/>
-  <label for="email2">
-    Confirm e-mail :
-  </label>
-  <input type="email" id="email2" name="email2" placeholder="E-mail" ngModel>
+  <input type="email" id="email" name="email" placeholder="E-mail" [value]="formCreate.email" (change)="formCreate.email = $event.target.value" ngModel>
   <br/>
   <label for="password">
     Password :
   </label>
-  <input type="password" id="password" name="password" placeholder="Password" ngModel>
+  <input type="password" id="password" name="password" placeholder="Password" [value]="formCreate.password" (change)="formCreate.password = $event.target.value" ngModel>
   <br/>
-  <input type="submit" value="Register">
+  <input type="submit" value="Register" (click)=createUser()>
 </form>
