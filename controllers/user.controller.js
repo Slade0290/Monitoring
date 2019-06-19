@@ -36,7 +36,7 @@ exports.findAll = (req, res) => {
         res.send(users);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "probléme a la recuperation des Users"
+            message: err.message || "problème à la récupération des Users"
         });
     });
 };
