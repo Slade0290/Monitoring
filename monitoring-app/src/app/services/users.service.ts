@@ -33,14 +33,16 @@ export class UsersService {
   }
 
   // create a user
-  createUser(lastname, firstname, email, password) {
+  createUser(lastname, firstname, email, password, admin, sudo) {
     // body envoyé dans la requête, appelé payload
     const payload =
     {
       "lastname": lastname,
       "firstname": firstname,
       "email": email,
-      "password": password
+      "password": password,
+      "admin": admin,
+      "sudo": sudo
     }
 
     // conversion en jSON
@@ -57,22 +59,42 @@ export class UsersService {
     );
   }
 
-  // mise à jour user
-  updatedUser(lastname,firstname,email,password, id) {
+  // mise à jour Droit d'Admin
+  updatedAdminUser(admin,id) {
 
     // body envoyé dans la requête, appelé payload
     const payload =
     {
-      "lastname": lastname,
-      "firstname": firstname,
-      "email": email,
-      "password": password,
+      "admin": admin
     }
     // conversion en JSON
     this.datatopost = JSON.stringify(payload);
 
     // requête http en post qui renvoie resp ou err
-    return this.http.put(this.apiUrl + id, this.datatopost, this.httpOptions).subscribe(
+    return this.http.put("http://localhost:3000/user-management/admin/" + id, this.datatopost, this.httpOptions).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err.message);
+      }
+    );
+
+  }
+
+  // mise à jour Droit Sudo
+  updatedSudoUser(sudo,id) {
+
+    // body envoyé dans la requête, appelé payload
+    const payload =
+    {
+      "sudo": sudo
+    }
+    // conversion en JSON
+    this.datatopost = JSON.stringify(payload);
+
+    // requête http en post qui renvoie resp ou err
+    return this.http.put("http://localhost:3000/user-management/sudo/" + id, this.datatopost, this.httpOptions).subscribe(
       res => {
         console.log(res);
       },

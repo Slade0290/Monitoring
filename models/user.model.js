@@ -6,8 +6,8 @@ const UserSchema = mongoose.Schema({
     firstname: String,
     email: String,
     password: String,
-    admin : Boolean,
-    sudo : Boolean
+    admin: Boolean,
+    sudo: Boolean
 
 }, {
     timestamps: true

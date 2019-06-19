@@ -8,10 +8,13 @@ module.exports = (app) => {
     app.get('/user-management', user.findAll);
 
     // Retrieve a single user with noteId
-    app.get('/users/:id', user.findOne);
+    app.get('/user-management/:id', user.findOne);
 
     // Update a user with userid
-    app.put('/users/:id', user.update);
+    app.put('/user-management/admin/:id', user.updateAdmin);
+
+    // Update a user with userid
+    app.put('/user-management/sudo/:id', user.updateSudo);
 
     // Delete a user with userid
     app.delete('/user-management/:id', user.delete);
