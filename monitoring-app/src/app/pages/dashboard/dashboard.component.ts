@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserPHPService } from '../../services/user-php.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+	message = "Loading...";
+
+  constructor(private user: UserPHPService) { }
 
   ngOnInit() {
+  	this.user.getSomeData().subscribe(data => {
+  		this.message = data.message
+  	})
   }
 
 }

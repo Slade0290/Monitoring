@@ -18,6 +18,7 @@ import { UserManagementComponent } from './pages/user-management/user-management
 
 import {UsersService} from './services/users.service';
 import {AuthService} from './services/auth.service';
+import {UserPHPService} from './services/user-php.service';
 
 import {AuthGuard} from './guard/auth.guard';
 
@@ -42,7 +43,8 @@ import {AuthGuard} from './guard/auth.guard';
   providers: [
     AuthService,
     AuthGuard,
-    UsersService
+    UsersService,
+    UserPHPService
   ],
   bootstrap: [AppComponent]
 })

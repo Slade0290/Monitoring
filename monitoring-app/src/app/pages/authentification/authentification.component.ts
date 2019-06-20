@@ -21,7 +21,7 @@ export class AuthentificationComponent implements OnInit {
     const password = target.querySelector('#password').value;
 
     this.Auth.getUserDetails(login, password).subscribe(data => {
-      if(data.success) {
+      if(data.success) {        //error here, don't know why but still working
         //redirect to /dashboard
         this.router.navigate(['dashboard']);
         this.Auth.setLoggedIn(true);
