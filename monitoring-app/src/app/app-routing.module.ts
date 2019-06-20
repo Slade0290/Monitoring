@@ -11,13 +11,11 @@ import { SidebarComponent } from './partials/sidebar/sidebar.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
 
+import {AuthGuard} from './guard/auth.guard';
+
 const routes: Routes = [
     {
-        path:'home',
-        component:HomeComponent,
-    },
-    {
-        path:'authentification',
+        path:'',
         component:AuthentificationComponent,
     },
     {
@@ -43,6 +41,7 @@ const routes: Routes = [
     {
          path:'dashboard',
          component:DashboardComponent,
+         canActivate: [AuthGuard]
     }
    //...
 ];

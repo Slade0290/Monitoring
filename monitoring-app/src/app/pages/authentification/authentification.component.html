@@ -1,4 +1,15 @@
-<form>
+<h1>
+ Web application <br/> -- Monitoring server
+</h1>
+
+<div class="access">
+  <div>
+    <p><a routerLink="/">login</a> / </p>
+    <p><a routerLink="./register">register</a></p>
+  </div>
+</div>
+
+<form (submit)="loginUser($event)">
   <label for="login">
     Login :
   </label>
@@ -9,5 +20,5 @@
   </label>
   <input id="password" name="password" type="password" required placeholder="Password">
   <br/>
-  <input type="submit" name="validate" id="btn_validate" value="Go !">
+  <input type="submit" name="validate" id="btn_validate" value="Login">
 </form>

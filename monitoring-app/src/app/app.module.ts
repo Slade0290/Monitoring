@@ -17,6 +17,9 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
 
 import {UsersService} from './services/users.service';
+import {AuthService} from './services/auth.service';
+
+import {AuthGuard} from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,8 @@ import {UsersService} from './services/users.service';
     HttpClientModule
   ],
   providers: [
+    AuthService,
+    AuthGuard,
     UsersService
   ],
   bootstrap: [AppComponent]
