@@ -6,9 +6,7 @@ interface myData {
   message: string
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
 
   private loggedInStatus = false;

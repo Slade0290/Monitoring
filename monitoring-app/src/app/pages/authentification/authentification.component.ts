@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-authentification',
@@ -21,14 +21,15 @@ export class AuthentificationComponent implements OnInit {
     const password = target.querySelector('#password').value;
 
     this.Auth.getUserDetails(login, password).subscribe(data => {
+      console.log(data)
       if(data.success) {        //error here, don't know why but still working
-        //redirect to /dashboard
-        this.router.navigate(['dashboard']);
+        //redirect to /sidebar
+        this.router.navigate(['sidebar']);
         this.Auth.setLoggedIn(true);
       } else {
         window.alert(data.message)
       }
-    });
+    })
     console.log(login, password);
   }
 }

@@ -10,6 +10,7 @@ import {ProfilComponent} from './pages/profil/profil.component';
 import { SidebarComponent } from './partials/sidebar/sidebar.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 import {AuthGuard} from './guard/auth.guard';
 
@@ -35,6 +36,10 @@ const routes: Routes = [
         component:UserManagementComponent,
     },
     {
+        path:'logout',
+        component:LogoutComponent,
+    },
+    {
         path:'aboutus',
         component:AboutusComponent,
     },
@@ -42,6 +47,11 @@ const routes: Routes = [
          path:'dashboard',
          component:DashboardComponent,
          canActivate: [AuthGuard]
+    },
+    {
+        path:'sidebar',
+        component:SidebarComponent,
+        canActivate: [AuthGuard]
     }
    //...
 ];

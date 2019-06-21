@@ -29,7 +29,7 @@ constructor(private auth: AuthService,
           this.auth.setLoggedIn(true)
           return true
         } else {
-          this.router.navigate(['authentification'])
+          this.router.navigate([''])
           return false
         }
       }));

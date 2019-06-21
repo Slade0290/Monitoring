@@ -21,6 +21,7 @@ import {AuthService} from './services/auth.service';
 import {UserPHPService} from './services/user-php.service';
 
 import {AuthGuard} from './guard/auth.guard';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {AuthGuard} from './guard/auth.guard';
     ProfilComponent,
     SidebarComponent,
     AboutusComponent,
-    UserManagementComponent
+    UserManagementComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
