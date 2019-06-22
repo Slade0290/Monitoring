@@ -2,22 +2,24 @@ const User = require('../models/user.model.js');
 
 // User logout
 exports.logout = (req, res) => {
-  console.log("Controller: logout");
-  if(req.session.user) {
+  console.log("Controller: logout", req.session);
+  if(req.session) {
     req.session.destroy();
-    return res.status(200).send("Session destroy");
+    console.log("Session destroy")
+    return res.status(200).send(true);
   }
-  return res.status(401).send("No session to destroy");
+  console.log("No session to destroy")
+  return res.status(401).send(false);
 }
 
 // User session
 exports.session = (req, res) => {
   console.log("Controller: session");
   if(!req.session.user) {
-    console.log(false)
+    console.log("Session:", false, req.session.user)
     return res.status(401).send(req.session.user);
   }
-  console.log(true)
+  console.log("Session:", true, req.session.user)
   return res.status(200).send(req.session.user);
 }
 

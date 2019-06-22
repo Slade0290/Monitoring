@@ -3,6 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Http, Headers, Response, RequestOptions, RequestMethod } from '@angular/http';
 import { Router } from '@angular/router';
 
+interface logoutStatus {
+  success: boolean
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +24,12 @@ export class UsersService {
 
   constructor(private http:HttpClient, private router:Router) {
 
+  }
+
+
+  // logout current user
+  logout() {
+    return this.http.get("http://localhost:3000/user-logout");
   }
 
   // get all users

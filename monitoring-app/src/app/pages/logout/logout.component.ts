@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserPHPService } from '../../services/user-php.service';
+import { UsersService } from '../../services/users.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
@@ -10,19 +10,30 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private user: UserPHPService, 
-  			  private router: Router,
-  			  private auth: AuthService) { }
+  constructor(private user: UsersService, 
+      			  private router: Router,
+      			  private auth: AuthService) { }
 
   ngOnInit() {
-  	this.user.logout().subscribe(data => {
-  		if(data.success) {
-  			this.router.navigate(['']);
-  			this.auth.setLoggedIn(false);
-  		} else {
-  			window.alert('Some problem');
-  		}
-  	})
+  	// this.user.logout().subscribe(data => {
+    //  console.log("Logout: ", data.success)
+  	// 	if(data.success) {
+  	// 		this.router.navigate(['']);
+  	// 		this.auth.setLoggedIn(false);
+  	// 	} else {
+  	// 		window.alert('Some problem');
+  	// 	}
+  	// })
+    this.user.logout().subscribe(
+      res => {
+        console.log("Logout:", res)
+        this.router.navigate(['']);
+        this.auth.setLoggedIn(false);
+      }, 
+      err => {
+        console.log("Logout:", err)
+        this.auth.setLoggedIn(true);
+        window.alert('Some problem');
+      })
   }
-
 }

@@ -29,5 +29,5 @@ module.exports = (app) => {
     app.get('/profil', user.findOne);
 
     // Destroy session
-    app.get('/logout', user.logout);
+    app.get('/user-logout', user.logout);
 }
