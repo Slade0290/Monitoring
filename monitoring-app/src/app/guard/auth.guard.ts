@@ -12,28 +12,22 @@ import { map } from 'rxjs/operators';
 export class AuthGuard implements CanActivate {
 
 constructor(private auth: AuthService, 
-            private router: Router,
-            private user: UserPHPService){
+            private router: Router){
 
 }
 
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-  		if(this.auth.isLoggedIn){
-        // just to be sure we are logged in
-        return true;
-      }
-      console.log("canActivate:", this.user.isLoggedIn())
-      return this.user.isLoggedIn().pipe(map(res => {
-        if(res.status) {
-          this.auth.setLoggedIn(true)
-          return true
-        } else {
-          this.router.navigate([''])
-          return false
-        }
-      }));
+  canActivate(next: ActivatedRouteSnapshot,
+              state: RouterStateSnapshot): 
+  Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  		console.log("Guard: canActivate")
+      this.auth.getLogin()
+      return this.auth.isLoggedIn;
+      // if(this.auth.isLoggedIn){
+      //   return true;
+      // }
+      // console.log("canActivate:", false);
+      // this.router.navigate(['']);
+      // return false;
   }
 
 }

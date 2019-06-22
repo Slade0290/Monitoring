@@ -17,25 +17,26 @@ export class AuthService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
-    })
+    }),
+    withCredentials: true
   };
 
   constructor(private http: HttpClient) { }
 
   // Mutators
   setLoggedIn(value: boolean) {
-    console.log("setLoggedIn:", value)
+    console.log("Service: setLoggedIn:", value)
     this.loggedInStatus = value;
   }
 
   get isLoggedIn() {
-    console.log("isLoggedIn")
+    console.log("Service: isLoggedIn", this.loggedInStatus)
     return this.loggedInStatus;
   }
 
   // Login an user
   loginUser(email, password) {
-
+    console.log("Service: loginUser");
     const payload = 
     {
       "email": email,
@@ -49,11 +50,18 @@ export class AuthService {
                           this.httpOptions)
   }
 
-  // Using php
-  // getUserDetails(login, password) {
-  //   return this.http.post('/api/auth.php', {
-  //     login,
-  //     password
-  //   })
-  // }
+  getLogin() {
+    console.log("Service: getLogin")
+    return this.http.get("http://localhost:3000/session",
+                          {withCredentials: true})
+    .subscribe(
+      res => {
+        console.log(res);
+        this.setLoggedIn(true)
+      },
+      err => {
+        console.log(err);
+        this.setLoggedIn(false)
+      })
+  }
 }

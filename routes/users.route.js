@@ -18,4 +18,10 @@ module.exports = (app) => {
 
     // Delete a user with userid
     app.delete('/user-management/:id', user.delete);
+
+    // Session side
+    app.get('/session', user.session);
+
+    // Destroy session
+    app.get('/logout', user.logout);
 }

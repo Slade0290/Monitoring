@@ -1,7 +1,28 @@
 const User = require('../models/user.model.js');
 
+// User logout
+exports.logout = (req, res) => {
+  console.log("Controller: logout");
+  if(req.session.user) {
+    req.session.destroy();
+    return res.status(200).send("Session destroy");
+  }
+  return res.status(401).send("No session to destroy");
+}
+
+// User session
+exports.session = (req, res) => {
+  console.log("Controller: session");
+  if(!req.session.user) {
+    return res.status(401).send(false);
+  }
+
+  return res.status(200).send(true);
+}
+
 // Login user
 exports.login = (req, res) => {
+  console.log("Controller: login");
   const {email, password} = req.body
   const resp = User.findOne({email: email, password: password})
   .then(user => {
@@ -10,6 +31,9 @@ exports.login = (req, res) => {
                message: "user not found"
            });
        }
+       // Add user to express session
+       req.session.user = user;
+
        res.send(user);
    }).catch(err => {
        if(err.kind === 'ObjectId') {
@@ -20,12 +44,11 @@ exports.login = (req, res) => {
        return res.status(500).send({
            message: "Error retrieving user"
        });
-   });
-
+   }); 
   if(!resp) {
-    console.log("incorrect details")
+    console.log("Invalid credential")
   } else {
-    console.log("logging you in") 
+    console.log("Logging you in") 
   }
 }
 
