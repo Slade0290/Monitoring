@@ -2,8 +2,8 @@ const User = require('../models/user.model.js');
 
 // User logout
 exports.logout = (req, res) => {
-  console.log("Controller: logout", req.session.user);
-  if(!req.session.user) {
+  console.log("Controller: logout", req.session);
+  if(req.session) {
     req.session.destroy();
     console.log("Session destroy")
     return res.status(200).send(true);
