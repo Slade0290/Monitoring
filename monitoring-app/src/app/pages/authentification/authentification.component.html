@@ -9,7 +9,22 @@
   </div>
 </div>
 
-<form (submit)="loginUser($event)">
+<form>
+  <label for="email">
+    E-mail :
+  </label>
+  <input type="email" id="email" name="email" placeholder="E-mail" [value]="formLogin.email" (change)="formLogin.email = $event.target.value" ngModel>
+  <br/>
+  <label for="password">
+    Password :
+  </label>
+  <input type="password" id="password" name="password" placeholder="Password" [value]="formLogin.password" (change)="formLogin.password = $event.target.value" ngModel>
+  <br/>
+  <button type="button" value="Register" (click)=loginUser()>Login</button>
+</form>
+
+
+<!-- <form (submit)="loginUser($event)">
   <label for="login">
     Login :
   </label>
@@ -22,3 +37,4 @@
   <br/>
   <input type="submit" name="validate" id="btn_validate" value="Login">
 </form>
+ -->

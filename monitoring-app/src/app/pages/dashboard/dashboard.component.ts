@@ -13,12 +13,12 @@ export class DashboardComponent implements OnInit {
   constructor(private user: UserPHPService) { }
 
   ngOnInit() {
-  	this.user.getSomeData().subscribe(data => {
-  		this.message = data.message
-      if(!data.success){
-        localStorage.removeItem('loggedIn');
-      }
-  	})
+  	// this.user.getSomeData().subscribe(data => {
+  	// 	this.message = data.message
+   //    if(!data.success){
+   //      localStorage.removeItem('loggedIn');
+   //    }
+  	// })
   }
 
 }

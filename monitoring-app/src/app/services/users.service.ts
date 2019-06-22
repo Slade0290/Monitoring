@@ -47,7 +47,10 @@ export class UsersService {
     this.datatopost = JSON.stringify(payload);
 
     // requête http en post qui renvoie resp ou err
-    return this.http.post("http://localhost:3000/register", this.datatopost, this.httpOptions).subscribe(
+    return this.http.post("http://localhost:3000/register", 
+                          this.datatopost, 
+                          this.httpOptions)
+    .subscribe(
       res => {
         console.log(res);
       },
@@ -72,7 +75,10 @@ export class UsersService {
     this.datatopost = JSON.stringify(payload);
 
     // requête http en post qui renvoie resp ou err
-    return this.http.put(this.apiUrl + id, this.datatopost, this.httpOptions).subscribe(
+    return this.http.put(this.apiUrl + id, 
+                         this.datatopost, 
+                         this.httpOptions)
+    .subscribe(
       res => {
         console.log(res);
       },

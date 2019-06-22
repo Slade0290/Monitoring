@@ -1,5 +1,34 @@
 const User = require('../models/user.model.js');
 
+// Login user
+exports.login = (req, res) => {
+  const {email, password} = req.body
+  const resp = User.findOne({email: email, password: password})
+  .then(user => {
+       if(!user) {
+           return res.status(404).send({
+               message: "user not found"
+           });
+       }
+       res.send(user);
+   }).catch(err => {
+       if(err.kind === 'ObjectId') {
+           return res.status(404).send({
+               message: "user not found"
+           });
+       }
+       return res.status(500).send({
+           message: "Error retrieving user"
+       });
+   });
+
+  if(!resp) {
+    console.log("incorrect details")
+  } else {
+    console.log("logging you in") 
+  }
+}
+
 // Create and Save a new user
 exports.create = (req, res) => {
     // Validate request

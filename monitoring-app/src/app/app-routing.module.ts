@@ -20,28 +20,37 @@ const routes: Routes = [
         component:AuthentificationComponent,
     },
     {
+        path:'authentification',
+        component:AuthentificationComponent,
+    },
+    {
         path:'register',
         component:RegisterComponent,
     },
     {
         path:'webterminal',
         component:WebterminalComponent,
+        canActivate: [AuthGuard]
     },
     {
         path:'profil',
         component:ProfilComponent,
+        canActivate: [AuthGuard]
     },
     {
         path:'user-management',
         component:UserManagementComponent,
+        canActivate: [AuthGuard]
     },
     {
         path:'logout',
         component:LogoutComponent,
+        canActivate: [AuthGuard]
     },
     {
         path:'aboutus',
         component:AboutusComponent,
+        canActivate: [AuthGuard]
     },
     {
          path:'dashboard',

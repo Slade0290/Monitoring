@@ -24,6 +24,7 @@ constructor(private auth: AuthService,
         // just to be sure we are logged in
         return true;
       }
+      console.log("canActivate:", this.user.isLoggedIn())
       return this.user.isLoggedIn().pipe(map(res => {
         if(res.status) {
           this.auth.setLoggedIn(true)

@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
 
   // fonction appelée au clique du bouton ajouter - voir html fonction (click)
   createUser() {
-      // on consomme notre service qui a comme arguments les valuers du formulaire
+      // on consomme notre service qui a comme arguments les valeurs du formulaire
       this.usersService.createUser(
                       this.formCreate.lastname,
                       this.formCreate.firstname,

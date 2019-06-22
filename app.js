@@ -6,7 +6,6 @@ const app = express();
 const hostname = '127.0.0.1';
 const port = 3000;
 
-
 app.use(function(req, res, next) {
   res.setHeader('Content-type', 'application/json');
   res.setHeader('Accept', 'application/json');
@@ -19,7 +18,7 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
+ 
 app.use(bodyParser.json());
 
 mongoose.connect('mongodb://B3C:monitoringb3c@ds231517.mlab.com:31517/web_monitoring', {
