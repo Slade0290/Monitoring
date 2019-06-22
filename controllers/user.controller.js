@@ -55,7 +55,7 @@ exports.login = (req, res) => {
 // Create and Save a new user
 exports.create = (req, res) => {
     // Validate request
-    if(!req.body.email || !req.body.email) {
+    if(!req.body.email || !req.body.password) {
         return res.status(400).send({
             message: "user content can not be empty"
         });
@@ -65,7 +65,9 @@ exports.create = (req, res) => {
       lastname: req.body.lastname,
       firstname: req.body.firstname,
       email: req.body.email,
-      password:req.body.password
+      password:req.body.password,
+      admin:req.body.admin,
+      sudo:req.body.sudo
     });
     // Save user in the database
     user.save()
@@ -113,22 +115,19 @@ exports.findOne = (req, res) => {
    });
 };
 
-// Update a user identified by the userid in the request
-exports.update = (req, res) => {
+// Update a user's Admin right identified by the userid in the request
+exports.updateAdmin = (req, res) => {
 
     // Validate Request
-    if(!req.body.nom) {
+    if(req.body.admin == null) {
         return res.status(400).send({
-            message: "user content can not be empty"
+            message: "admin field content can not be empty"
         });
     }
 
     // Find user and update it with the request body
     User.findByIdAndUpdate(req.params.id, {
-      nom: req.body.nom,
-      prenom: req.body.prenom,
-      email: req.body.email,
-      password:req.body.password
+      admin:req.body.admin,
     }, {new: true})
     .then(user => {
         if(!user) {
@@ -144,7 +143,41 @@ exports.update = (req, res) => {
             });
         }
         return res.status(500).send({
-            message: "Error updating user with id " + req.params.id
+            message: "Error updating user's admin right with id " + req.params.id
+        });
+    });
+
+};
+
+// Update a user's Sudo right identified by the userid in the request
+exports.updateSudo = (req, res) => {
+
+    // Validate Request
+    if(req.body.sudo == null) {
+        return res.status(400).send({
+            message: "sudo field content can not be empty"
+        });
+    }
+
+    // Find user and update it with the request body
+    User.findByIdAndUpdate(req.params.id, {
+      sudo:req.body.sudo,
+    }, {new: true})
+    .then(user => {
+        if(!user) {
+            return res.status(404).send({
+                message: "user not found with id " + req.params.id
+            });
+        }
+        res.send(user);
+    }).catch(err => {
+        if(err.kind === 'id') {
+            return res.status(404).send({
+                message: "user not found with id " + req.params.id
+            });
+        }
+        return res.status(500).send({
+            message: "Error updating user's admin right with id " + req.params.id
         });
     });
 

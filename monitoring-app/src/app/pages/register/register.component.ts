@@ -13,7 +13,9 @@ export class RegisterComponent implements OnInit {
     lastname: "",
     firstname: "",
     email: "",
-    password: ""
+    password: "",
+    admin: false,
+    sudo: false
   }
 
   constructor(private usersService: UsersService, private route: Router) {
@@ -25,12 +27,14 @@ export class RegisterComponent implements OnInit {
 
   // fonction appelée au clique du bouton ajouter - voir html fonction (click)
   createUser() {
-      // on consomme notre service qui a comme arguments les valeurs du formulaire
-      this.usersService.createUser(
-                      this.formCreate.lastname,
-                      this.formCreate.firstname,
-                      this.formCreate.email,
-                      this.formCreate.password);
-      this.route.navigate(['/authentification']);
+    // on consomme notre service qui a comme arguments les valuers du formulaire
+    this.usersService.createUser(
+      this.formCreate.lastname,
+      this.formCreate.firstname,
+      this.formCreate.email,
+      this.formCreate.password,
+      this.formCreate.admin,
+      this.formCreate.sudo);
+    this.route.navigate(['/authentification']);
   }
 }

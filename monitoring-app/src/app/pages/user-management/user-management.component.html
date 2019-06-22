@@ -43,13 +43,14 @@
           </span>
 
           <span class="line-content">
-            <button type="button" name="" value="ON">ON</button>
-            <button type="button" name="" value="OFF">OFF</button>
+
+            <button type="button" name="" value="ON" *ngIf="!user.admin" (click)="updateAdminUser(user.admin,user._id)">ON</button>
+            <button type="button" name="" value="OFF" *ngIf="user.admin" (click)="updateAdminUser(user.admin,user._id)">OFF</button>
           </span>
 
           <span class="line-content">
-            <button type="button" name="" value="ON">ON</button>
-            <button type="button" name="" value="OFF">OFF</button>
+            <button type="button" name="" value="ON" *ngIf="!user.sudo" (click)="updateSudoUser(user.sudo,user._id)">ON</button>
+            <button type="button" name="" value="OFF" *ngIf="user.sudo" (click)="updateSudoUser(user.sudo,user._id)">OFF</button>
           </span>
 
           <span class="line-content">

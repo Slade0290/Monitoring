@@ -29,4 +29,17 @@ export class UserManagementComponent implements OnInit {
     });
     location.reload();
   }
+
+  updateAdminUser(admin,id){
+    this.usersService
+    .updatedAdminUser(!admin,id);
+    window.location.reload();
+  }
+
+  updateSudoUser(sudo,id){
+    this.usersService
+    .updatedSudoUser(!sudo,id);
+    window.location.reload();
+  }
+
 }
