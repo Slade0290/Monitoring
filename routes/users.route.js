@@ -25,6 +25,9 @@ module.exports = (app) => {
     // Session side
     app.get('/session', user.session);
 
+    // Session side
+    app.get('/profil', user.findOne);
+
     // Destroy session
     app.get('/logout', user.logout);
 }

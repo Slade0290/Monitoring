@@ -14,10 +14,11 @@ exports.logout = (req, res) => {
 exports.session = (req, res) => {
   console.log("Controller: session");
   if(!req.session.user) {
-    return res.status(401).send(false);
+    console.log(false)
+    return res.status(401).send(req.session.user);
   }
-
-  return res.status(200).send(true);
+  console.log(true)
+  return res.status(200).send(req.session.user);
 }
 
 // Login user
@@ -95,6 +96,7 @@ exports.findAll = (req, res) => {
 
 // Find a single user with a userid
 exports.findOne = (req, res) => {
+  console.log(req.session.user);
     User.findById(req.params.id)
    .then(user => {
        if(!user) {
