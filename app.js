@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({
   extended: true
 }));
- 
+
 app.use(bodyParser.json());
 
 app.use(session({secret: "rfqfefzq34sc34sffddf", resave:false, saveUninitialized:true, maxAge: 20000}))

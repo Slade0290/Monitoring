@@ -26,5 +26,5 @@ module.exports = (app) => {
     app.get('/session', user.session);
 
     // Destroy session
-    app.get('/logout', user.logout);
+    app.get('/user-logout', user.logout);
 }
