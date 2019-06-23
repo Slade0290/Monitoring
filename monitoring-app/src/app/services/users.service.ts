@@ -38,8 +38,12 @@ export class UsersService {
   }
 
   // get one user by Id
-  getUser(id) {
-    return this.http.get("http://localhost:3000/profil/" + id);
+  session() {
+    return this.http.get("http://localhost:3000/session");
+  }
+
+  getUser(){
+    return this.http.get("http://localhost:3000/profil");
   }
 
   // create a user

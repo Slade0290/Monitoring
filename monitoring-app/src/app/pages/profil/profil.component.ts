@@ -17,13 +17,7 @@ export class ProfilComponent implements OnInit {
                 private route:ActivatedRoute,
                 private router:Router) {
 
-      // Récupérer l'id dans  la route
-      this.route.params.subscribe((params) => {
-          this.userid=params['id'];
-          console.log(params['id']);
-      })
-
-      this.usersService.getUser(this.userid).subscribe(user=>{
+      this.usersService.getUser().subscribe(user=>{
         this.user=user;
         console.log(user);
       })
