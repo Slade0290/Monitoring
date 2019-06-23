@@ -24,7 +24,7 @@
 
 <fieldset>
   <legend>DASHBOARD</legend>
-<div class="master-content">
+<div class="master-content" *ngFor="let data of datas">
   <div class="chart">
     <div id="myChart" class="chart-item"></div>
     <div id="donut-chart1" class="chart-item"></div>
@@ -38,15 +38,15 @@
         SYSTEM
       </p>
       <span class="item">
-        HOSTNAME : DATA
+        HOSTNAME : {{data.hostname}}
       </span>
       <br/>
       <span class="item">
-        OS VERSION : DATA
+        OS VERSION : {{data.osNameVersion}}
       </span>
       <br/>
       <span class="item">
-        LAST UPDATE : DATA
+        LAST UPDATE : {{data.time}}
       </span>
       <br/>
     </div>
@@ -56,19 +56,19 @@
         CPU
       </p>
       <span class="item">
-        CPU NAME : DATA
+        CPU NAME : {{data.nameProc}}
       </span>
       <br/>
       <span class="item">
-        CORES : DATA
+        CORES : {{data.nbProc}}
       </span>
       <br/>
       <span class="item">
-        TEMP : DATA
+        TEMP : {{data.str}}
       </span>
       <br/>
       <span class="item">
-        CPU LOAD : DATA
+        CPU LOAD : {{data.hostname}}
       </span>
       <br/>
     </div>
@@ -78,15 +78,15 @@
         DISK
       </p>
       <span class="item">
-        DISK NAME : DATA
+        DISK NAME : {{data.diskName}}
       </span>
       <br/>
       <span class="item">
-        FREESPACE : DATA
+        FREESPACE : {{data.pCentSpace}}
       </span>
       <br/>
       <span class="item">
-        TOTAL SIZE : DATA
+        TOTAL SIZE : {{data.totalSize}}
       </span>
       <br/>
     </div>
@@ -96,11 +96,11 @@
         RAM
       </p>
       <span class="item">
-        TOTAL SIZE : DATA
+        TOTAL SIZE : {{data.ramTotal}}
       </span>
       <br/>
       <span class="item">
-        RAM LOAD : DATA
+        RAM LOAD : {{data.ramFree}}
       </span>
       <br/>
     </div>
@@ -110,54 +110,23 @@
         NETWORK
       </p>
       <span class="item">
-        RECEIVE : DATA
+        RECEIVE : {{data.ipExt}}
       </span>
       <br/>
       <span class="item">
-        SEND : DATA
+        SEND : {{data.ipLocal}}
       </span>
       <br/>
     </div>
   </div>
 
-  <div class="services">
+  <div class="services" *ngFor="let service of data.services">
       <div class="first-line">
         <span class="line-content">
-          DESCRIPTION
+          DESCRIPTION : {{service}}
         </span>
         <span class="line-content">
-          STATUS
-        </span>
-        <span class="line-content">
-          ACTION
-        </span>
-      </div>
-
-      <!--Faire une boucle d'affichage
-      avec tous les services récupérés
-      avec le block suivant
-      -->
-      <div class="line">
-        <span class="line-content">
-          DESCRIPTION
-        </span>
-        <span class="line-content">
-          STATUS
-        </span>
-        <span class="line-content">
-          <input type="button" value="ACTION">
-        </span>
-      </div>
-
-      <div class="line">
-        <span class="line-content">
-          DESCRIPTION
-        </span>
-        <span class="line-content">
-          STATUS
-        </span>
-        <span class="line-content">
-          <input type="button" value="ACTION">
+          ACTION 
         </span>
       </div>
     </div>
