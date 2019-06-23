@@ -92,7 +92,6 @@ export class UsersService {
         console.log(err.message);
       }
     );
-
   }
 
   // mise à jour Droit Sudo
