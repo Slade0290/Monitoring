@@ -10,9 +10,11 @@ interface myData {
 @Injectable()
 export class AuthService {
 
-  private loggedInStatus = false;
+  loggedInStatus = false;
 
   datatopost;
+
+  user;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -58,6 +60,7 @@ export class AuthService {
       res => {
         console.log(res);
         this.setLoggedIn(true)
+        this.user = res
       },
       err => {
         console.log(err);

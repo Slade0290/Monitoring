@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UsersService} from '../../services/users.service';
+import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute } from "@angular/router";
 import {Router} from '@angular/router';
 
@@ -11,19 +11,21 @@ import {Router} from '@angular/router';
 export class ProfilComponent implements OnInit {
 
     user;
-    userid;
 
-    constructor(private usersService:UsersService,
-                private route:ActivatedRoute,
-                private router:Router) {
+    constructor(private authService:AuthService) {
 
-      this.usersService.getUser().subscribe(user=>{
-        this.user=user;
-        console.log(user);
-      })
+     console.log("Profile constructor: before calling getLogin")
+     this.user = this.authService.user
+
+     //  console.log("Profile constructor: before calling getLogin")
+     //  this.authService.getLogin().then(function() {
+     //      console.log(" Profile constructor: ",this.authService.user)
+     //      this.user = this.authService.user
+     //  })
      }
 
     ngOnInit() {
 
     }
+
   }

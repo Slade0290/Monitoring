@@ -37,10 +37,10 @@ export class UsersService {
     return this.http.get(this.apiUrl);
   }
 
-  // get one user by Id
-  session() {
-    return this.http.get("http://localhost:3000/session");
-  }
+  // get user from session
+  // getSession() {
+  //   return this.http.get("http://localhost:3000/session");
+  // }
 
   getUser(){
     return this.http.get("http://localhost:3000/profil");

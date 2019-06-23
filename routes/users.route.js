@@ -10,9 +10,6 @@ module.exports = (app) => {
     // Retrieve all users
     app.get('/user-management', user.findAll);
 
-    // Retrieve a single user with noteId
-    app.get('/user-management/:id', user.findOne);
-
     // Update a user with userid
     app.put('/user-management/admin/:id', user.updateAdmin);
 
