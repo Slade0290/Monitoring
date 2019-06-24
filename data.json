@@ -1,0 +1,29 @@
+{
+   "hostName": "raspberrypi",
+   "osNameVersion": "Linux raspberrypi 4.19.42-v7+ armv7l",
+   "time": 20190623121402,
+   "nameProc": "ARMv7 Processor rev 4 (v7l)",
+   "nbProc": 4,
+   "str": 52,
+   "ramTotal": 948304,
+   "ramFree": 555632,
+   "diskName": "mmcblk0",
+   "useSpace": 5.3,
+   "totalSize": 15,
+   "pCentSpace": 38,
+   "ipExt": "82.124.209.151",
+   "ipLocal": "192.168.1.36",
+   "recep": 0.79,
+   "transmit": 0.28,
+   "service": [
+	{
+      "name": "/sbin/init splash"
+	},
+   {
+      "name": "[kthreadd]"
+   },
+   {
+      "name": "[rcu_gp]"
+   }
+    ]
+}

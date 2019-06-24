@@ -13,6 +13,7 @@ import { UserManagementComponent } from './pages/user-management/user-management
 import { LogoutComponent } from './pages/logout/logout.component';
 
 import {AuthGuard} from './guard/auth.guard';
+import {AdminGuard} from './guard/admin.guard';
 
 const routes: Routes = [
     {
@@ -40,7 +41,7 @@ const routes: Routes = [
     {
         path:'user-management',
         component:UserManagementComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard, AdminGuard]
     },
     {
         path:'logout',
