@@ -19,6 +19,7 @@ import { UserManagementComponent } from './pages/user-management/user-management
 import {UsersService} from './services/users.service';
 import {AuthService} from './services/auth.service';
 import {UserPHPService} from './services/user-php.service';
+import {DatasService} from './services/datas.service';
 
 import {AuthGuard} from './guard/auth.guard';
 import { LogoutComponent } from './pages/logout/logout.component';
@@ -46,7 +47,8 @@ import { LogoutComponent } from './pages/logout/logout.component';
     AuthService,
     AuthGuard,
     UsersService,
-    UserPHPService
+    UserPHPService,
+    DatasService
   ],
   bootstrap: [AppComponent]
 })

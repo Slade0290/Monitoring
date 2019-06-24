@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DatasService} from '../../services/datas.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,15 +10,16 @@ export class DashboardComponent implements OnInit {
 
 	//message = "Loading...";
 
-  constructor() { }
+  datas;
+
+    constructor(private datasService:DatasService) {
+    this.datasService.getDatas().subscribe(datas=>{
+      this.datas=datas;
+      console.log(datas);
+    })
+   }
 
   ngOnInit() {
-  	// this.user.getSomeData().subscribe(data => {
-  	// 	this.message = data.message
-   //    if(!data.success){
-   //      localStorage.removeItem('loggedIn');
-   //    }
-  	// })
   }
 
 }
