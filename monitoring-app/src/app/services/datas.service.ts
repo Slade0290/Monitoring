@@ -10,9 +10,9 @@ interface logoutStatus {
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DatasService {
 
-  apiUrl = "http://localhost:3000/dashboard/";
+  apiUrl = "http://localhost:3000/dashboard";
 
   datatopost;
 
@@ -27,7 +27,7 @@ export class DataService {
   }
 
   // get all data
-  getData() {
+  getDatas() {
     return this.http.get(this.apiUrl);
   }
 

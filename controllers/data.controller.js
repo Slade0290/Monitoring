@@ -1,9 +1,8 @@
-const Data = require('../models/data.models.js');
+const Data = require('../models/data.model.js');
 // READ ----------------------------------------------------------------------------
 
 // Find all Datas
 exports.findAll = (req, res) => {
-
     Data.find()
     .then(datas => {
         res.send(datas);

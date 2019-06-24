@@ -64,11 +64,7 @@
       </span>
       <br/>
       <span class="item">
-        TEMP : {{data.str}}
-      </span>
-      <br/>
-      <span class="item">
-        CPU LOAD : {{data.hostname}}
+        TEMP : {{data.str}} °C
       </span>
       <br/>
     </div>
@@ -82,11 +78,11 @@
       </span>
       <br/>
       <span class="item">
-        FREESPACE : {{data.pCentSpace}}
+        FREESPACE : {{data.pCentSpace}} G
       </span>
       <br/>
       <span class="item">
-        TOTAL SIZE : {{data.totalSize}}
+        TOTAL SIZE : {{data.totalSize}} G
       </span>
       <br/>
     </div>
@@ -96,11 +92,11 @@
         RAM
       </p>
       <span class="item">
-        TOTAL SIZE : {{data.ramTotal}}
+        TOTAL SIZE : {{data.ramTotal}} M
       </span>
       <br/>
       <span class="item">
-        RAM LOAD : {{data.ramFree}}
+        RAM FREE : {{data.ramFree}} M
       </span>
       <br/>
     </div>
@@ -110,20 +106,20 @@
         NETWORK
       </p>
       <span class="item">
-        RECEIVE : {{data.ipExt}}
+        RECEIVE : {{data.recep}} Mb
       </span>
       <br/>
       <span class="item">
-        SEND : {{data.ipLocal}}
+        SEND : {{data.transmit}} Mb
       </span>
       <br/>
     </div>
   </div>
 
-  <div class="services" *ngFor="let service of data.services">
+  <div class="services" *ngFor="let service of data.service">
       <div class="first-line">
         <span class="line-content">
-          DESCRIPTION : {{service}}
+          DESCRIPTION : {{service.name}}
         </span>
         <span class="line-content">
           ACTION 

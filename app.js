@@ -38,6 +38,7 @@ mongoose.connect('mongodb://B3C:monitoringb3c@ds231517.mlab.com:31517/web_monito
 });
 
 require('./routes/users.route.js')(app);
+require('./routes/datas.route.js')(app);
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);

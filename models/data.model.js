@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 // dara model
-const DaraSchema = mongoose.Schema({
-hostName: String,
-osNameVersion: String,
+const DataSchema = mongoose.Schema({
+   hostName: String,
+   osNameVersion: String,
    time: Date,
    nameProc: String,
    nbProc: Number,
@@ -23,4 +23,4 @@ osNameVersion: String,
     timestamps: true
 });
 
-module.exports = mongoose.model('Dara', DaraSchema);
+module.exports = mongoose.model('Data', DataSchema);
