@@ -116,13 +116,23 @@
     </div>
   </div>
 
-  <div class="services" *ngFor="let service of data.service">
+  <div class="services">
       <div class="first-line">
         <span class="line-content">
-          DESCRIPTION : {{service.name}}
+          DESCRIPTION 
         </span>
         <span class="line-content">
           ACTION 
+        </span>
+      </div>
+
+      <div class="line" *ngFor="let service of data.service">
+        <span class="line-content">
+          {{service.name}}
+        </span>
+        <span class="line-content action-button">
+          <input type="button" value="STOP">
+           
         </span>
       </div>
     </div>
